@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            display: none;
+            text-align: right;
+        }
+        #ShowList {
+            margin-left: 90%;
+        }
+</style>
+</head>
+<body>
+    <fieldset>
+        <input type="button" id="ShowList" value="Hi, user ...">
+        <div id="list">
+                <li><a href="#Profile"> Profile</a></li>
+                <li><a href="#Setting">Setting </a></li>
+                <li><a href="#Logout">Logout </a></li>
+        </div>
+    </fieldset>
+    <h2 style="text-align: center;"> INFORMATION </h2>
+    <div style="text-align: center;">
+        <label>Name <input id="Name" type="text"> </label>
+        <br> <br>
+        <label>DOB <input id="DOB" type="date"> </label>
+        <br> <br>
+        <label>Address <input id="address" type="text"> </label>
+        <br> <br>
+        <label>Email <input id="Mail" type="text"> </label>
+        <br> <br>
+        <label>Phone <input id="Phone" type="number"> </label>
+        <br> <br>
+        <input type="submit" value="Edit" onclick="editer()" >
+        <input type="reset" value="Reset" onclick="reset()">
+    </div>
+    <script>
+        function editer(){
+            alert("Đã cập nhập thông tin")
+        }
+        function reset(){
+            document.getElementById("Name").value = "";
+            document.getElementById("DOB").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("Mail").value = "";
+            document.getElementById("Phone").value = "";
+        }
+        const inputToShowList = document.getElementById("ShowList");
+        const listContainer = document.getElementById("list");
+        inputToShowList.addEventListener("click", function() {
+            if (listContainer.style.display === "none") {
+                listContainer.style.display = "block";
+            } else {
+                listContainer.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

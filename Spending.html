@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    #custom-fieldset {
+        width: 200px;
+        margin: 20px; 
+        float: left; 
+        clear: left; 
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-sizing: border-box; 
+    }
+
+    label {
+        margin-bottom: 8px; 
+    }
+
+
+</style>
+<body>
+<fieldset id="custom-fieldset">
+    <div>
+        <label> --- </label>
+        <br>
+        <a href="1" style="color:black ; text-decoration: none;" > Your recipes </a>
+        <br>
+        <a href="2" style="color:black ; text-decoration: none;"> Search dishes</a>
+        <br>
+        <a href="3" style="color:black ; text-decoration: none;"> Recommend foods</a>
+        <br>
+        <a href="4" style="color:black ; text-decoration: none;"> Review products</a>
+        <br>
+        <a >Tips </a>
+        <br>
+        <a href="5" style="color:black ; text-decoration: none;"> Group 
+            <ul> <a href="6" style="color: black;">  Group 1  </a></ul>
+            <ul> <a href="7" style="color: black;">  Group 2 </a> </ul>
+            <ul> <a href="8" style="color: black; text-decoration: none;">  Create new group</a> </ul>
+        </a>
+        <br>
+        <a href="9" style="color:black ; text-decoration: none;"> <b>Spending management </b></a>
+    </div>
+</fieldset>
+    
+<div>
+    <fieldset style="contain: content;">
+
+        <input style="margin-left: 480px;" type="text" name="hmm" id="hmm" value="Hi, user...">
+    </fieldset>
+</div>
+<br>
+<div>
+    <table border="1px">
+        <<thead>
+        <tr>
+            <th>Daily</th>
+            <th>Weekly</th>
+            <th>Moonthly</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="1"> <input  type="date"> </td>
+            
+            <td colspan="3"> Total  <input id="total" type="number"> </td>
+        </tr>
+        <tr>
+            <td rowspan="1" >Breakfast</td>
+            <td colspan="3" > <input id="sang" type="number"></td>
+           
+            
+        </tr>
+        <tr>
+             <td rowspan="1" >Lunch</td>
+            <td colspan="3" ><input id="trua" type="number"></td>
+        </tr>
+        <tr>
+             <td rowspan="1" >Dinner</td>
+            <td colspan="3" ><input id="toi" type="number"></td>
+        </tr>
+    </tbody>
+    <tfoot >
+        <tr style="text-align: center; ">
+            <td colspan="3">
+                <input type="submit" value="Total" onclick="Total()">
+            </td>
+            <td colspan="3">
+                <input type="reset" value="Reset" onclick="resetValues()">
+            </td>
+        </tr>
+    </tfoot>
+    
+</div>
+<script>
+    function Total(){
+        var sangValue = parseInt(document.getElementById("sang").value) ;
+        var truaValue = parseInt(document.getElementById("trua").value) ;
+        var toiValue = parseInt(document.getElementById("toi").value) ;
+
+        var total = sangValue + truaValue + toiValue;
+
+        document.getElementById("total").value = total;
+    }
+    function resetValues(){
+        document.getElementById("sang").value = "";
+        document.getElementById("trua").value = "";
+        document.getElementById("toi").value = "";
+        document.getElementById("total").value = "";
+    }
+</script>
+
+</body>
+</html>
